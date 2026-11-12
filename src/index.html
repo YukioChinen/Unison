@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unison</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Unison</h1>
+    <span class="sub">Mouse Redragon M916 PRO 4K · Headset ATK N9 Ultra</span>
+    <label class="auto"><input type="checkbox" id="autostart" /> Iniciar com o Windows (abre direto na bandeja)</label>
+  </header>
+
+  <section class="cards">
+    <div class="card" id="hsCard">
+      <div class="card-title">Headset · ATK N9 Ultra</div>
+      <div class="big"><span id="hsPct">—</span><span class="unit" id="hsUnit"></span></div>
+      <div class="bar"><div id="hsBar"></div></div>
+      <div class="meta" id="hsMeta">Conectando…</div>
+    </div>
+    <div class="card" id="msCard">
+      <div class="card-title">Mouse · Redragon M916 PRO 4K</div>
+      <div class="big"><span id="msPct">—</span><span class="unit" id="msUnit"></span></div>
+      <div class="bar"><div id="msBar"></div></div>
+      <div class="meta" id="msMeta">Conectando…</div>
+    </div>
+  </section>
+
+  <section class="panel" id="cfgPanel">
+    <div class="panel-head">
+      <h2>Mouse · Configurações</h2>
+      <button class="ghost" id="cfgReload">Ler do mouse</button>
+      <span id="cfgStatus" class="hint"></span>
+    </div>
+    <div class="cfg-row">
+      <label>Polling
+        <select id="cfgRate"></select>
+      </label>
+      <label>Estágios de DPI
+        <select id="cfgCount"></select>
+      </label>
+    </div>
+    <table id="stages">
+      <thead><tr><th>Ativo</th><th>Estágio</th><th>DPI</th><th>Cor</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <p class="hint" id="cfgNote"></p>
+  </section>
+
+  <section class="panel" id="lightPanel">
+    <div class="panel-head"><h2>Mouse · Iluminação</h2><span id="lightStatus" class="hint"></span></div>
+    <div class="light-grid">
+      <div>
+        <div class="card-title">Indicador de DPI</div>
+        <div class="cfg-row">
+          <label>Efeito <select id="dpiEffect"></select></label>
+          <label>Brilho <select id="dpiBright"></select></label>
+          <label>Velocidade <select id="dpiSpeed"></select></label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="toolbar">
+    <label><input type="checkbox" id="onlyKnown" checked /> Só meus dispositivos</label>
+    <button id="refresh">Atualizar</button>
+    <span id="status"></span>
+  </section>
+
+  <main>
+    <table id="devices">
+      <thead>
+        <tr><th>Dispositivo</th><th>VID:PID</th><th>Interface</th><th>Usage page</th><th>Usage</th><th></th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <section id="sniffer" hidden>
+      <h2 id="sniffTitle">Relatórios recebidos</h2>
+      <p class="hint">Conecte/desconecte o carregador ou mude o volume enquanto escuta. Linhas novas aparecem em destaque.</p>
+      <pre id="reports"></pre>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

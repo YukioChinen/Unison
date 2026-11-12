@@ -1,0 +1,13 @@
+{
+  "name": "unison",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Painel unificado para mouse Redragon M916 PRO 4K e headset ATK N9 Ultra",
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}
